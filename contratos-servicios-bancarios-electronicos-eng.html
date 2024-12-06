@@ -1,0 +1,56 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="windows-1252">
+<title>Contrato de Servicios Bancarios Electronicos</title>
+<style>
+#terms { }
+#content { padding: 10px 0px 10px 0px; height: 360px; overflow-y: scroll;  overflow-x: hidden;overflow-y: scroll;-webkit-overflow-scrolling: touch;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+<div id="terms">
+  <div id="content"> 
+    <!--Load Ajax Content Here--> 
+   </div>
+</div>
+<script type="text/javascript" src="scrollfix.js"></script>
+<script type="text/javascript">
+
+//Prevent Header & Footer From Showing Browser Chrome
+
+document.addEventListener('touchmove', function(event) {
+   if(event.target.parentNode.className.indexOf('noBounce') != -1 || event.target.className.indexOf('noBounce') != -1 ) {
+	event.preventDefault(); }
+}, false);
+
+// Add ScrollFix
+var scrollingContent = document.getElementById("content");
+new ScrollFix(scrollingContent);
+
+</script>
+
+<script>
+var intScale;
+function doScale(h){
+	clearTimeout(intScale);
+	parent.scaleIframe(h);
+}
+$(function() {
+	
+	$.ajax({ 
+		url: "Contrato+de+servicios+bancarios+electronicos+Eng.html",
+		success: function(result) { 
+			$('#content').html(result);
+		} 
+	}); 
+      
+});
+
+
+</script>
+</body>
+</html>
